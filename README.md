@@ -47,8 +47,34 @@ Tables created:
 Steps:  
 - Created dbt_project.yml and profiles.yml
 - Loaded raw tables into dbt as sources
-- Created two dbt models:  
+- Created three dbt models:  
 - cleaned_games – cleaned, filtered game results with team info  
 - averaged_lines_regular – grouped and averaged betting metrics by season for regular season games
 - averaged_lines_playoffs - grouped and averaged betting metrics by season for playoff games  
 Materialized these models as views in Snowflake
+
+Example transformation logic:  
+```
+SELECT
+  schedule_date::DATE AS game_date,
+  schedule_season,
+  schedule_playoff,
+  team_favorite_id,
+  spread_favorite,
+  team_home,
+  team_away,
+  score_home,
+  score_away,
+  home_team_conference,
+  away_team_conference
+FROM {{ source('nfl_source', 'games_with_team_info') }}
+WHERE score_home IS NOT NULL AND score_away IS NOT NULL AND 
+team_favorite_id IS NOT NULL AND spread_favorite IS NOT NULL AND
+schedule_season >= 1979
+```  
+4. 📊 Visualization: Dashboard in Snowflake  
+A simple dashboard was built inside Snowflake to explore the transformed data interactively.  
+
+Features:  
+- Year over year line charts showing season-level averages of closing spreads for regular season and playoff games  
+- Scorecards with averaged spreads across full timeframe
