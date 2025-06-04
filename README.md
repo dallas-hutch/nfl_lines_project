@@ -7,9 +7,13 @@ https://app.snowflake.com/etevmba/cb78544/#/nfl-betting-dashboard-dTwv50f1
 Key Technologies Used:
 
 Amazon S3 – Data storage layer  
+
 Snowflake – Cloud data warehouse for staging and querying  
+
 dbt (Data Build Tool) – SQL-based transformation and modeling  
+
 Dashboard in Snowflake – Native dashboarding interface for interactive data visualization  
+
 
 📁 Project Structure
 nfl_project/  
