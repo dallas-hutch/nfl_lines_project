@@ -1,0 +1,13 @@
+nfl_project:
+  target: dev
+  outputs:
+    dev:
+      account: ETEVMBA-CB78544
+      database: NFL_BETTING_DATABASE
+      password: Daktoceedeeforthetd88
+      role: ACCOUNTADMIN
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: dallashutchinson4
+      warehouse: COMPUTE_WH

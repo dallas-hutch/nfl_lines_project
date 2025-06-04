@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: nfl_source
+    database: NFL_BETTING_DATABASE
+    schema: PUBLIC
+    tables:
+      - name: games_with_team_info
