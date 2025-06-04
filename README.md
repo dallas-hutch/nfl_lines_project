@@ -1,5 +1,3 @@
-
-https://app.snowflake.com/etevmba/cb78544/#/nfl-betting-dashboard-dTwv50f1
 # 🏈 NFL Betting Analytics Pipeline: S3 → Snowflake → dbt → Dashboard
 ## This project showcases a data engineering pipeline built to process and analyze NFL betting data. It demonstrates how to ingest data from Amazon S3, stage and transform it in Snowflake, model it using dbt, and visualize it with a Snowflake dashboard hosted inside Snowflake.
 📌 Project Overview
@@ -15,7 +13,8 @@ Dashboard in Snowflake – Native dashboarding interface for interactive data vi
 nfl_project/  
 ├── models/  
 │   ├── cleaned_games.sql  
-│   ├── season_averages.sql  
+│   ├── averaged_lines_regular.sql  
+│   ├── averaged_lines_playoffs.sql  
 │   ├── schema.yml  
 ├── dbt_project.yml  
 ├── profiles.yml (local)  
@@ -72,7 +71,7 @@ WHERE score_home IS NOT NULL AND score_away IS NOT NULL AND
 team_favorite_id IS NOT NULL AND spread_favorite IS NOT NULL AND
 schedule_season >= 1979
 ```  
-4. 📊 Visualization: Dashboard in Snowflake  
+4. 📊 Visualization: [Dashboard in Snowflake](https://app.snowflake.com/etevmba/cb78544/#/nfl-betting-dashboard-dTwv50f1) 
 A simple dashboard was built inside Snowflake to explore the transformed data interactively.  
 
 Features:  
