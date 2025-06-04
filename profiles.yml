@@ -4,7 +4,7 @@ nfl_project:
     dev:
       account: ETEVMBA-CB78544
       database: NFL_BETTING_DATABASE
-      password: Daktoceedeeforthetd88
+      password: **************
       role: ACCOUNTADMIN
       schema: PUBLIC
       threads: 1
